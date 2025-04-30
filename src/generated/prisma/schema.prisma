@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Batters {
+  id     Int @id @unique
+  AB     Int
+  H      Int
+  double Int
+  triple Int
+  HR     Int
+  RBI    Int
+  K      Int
+  BB     Int
+  SH     Int
+  SF     Int
+  SB     Int
+}

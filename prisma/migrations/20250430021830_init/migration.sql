@@ -1,0 +1,18 @@
+-- CreateTable
+CREATE TABLE "Batters" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "AB" INTEGER NOT NULL,
+    "H" INTEGER NOT NULL,
+    "double" INTEGER NOT NULL,
+    "triple" INTEGER NOT NULL,
+    "HR" INTEGER NOT NULL,
+    "RBI" INTEGER NOT NULL,
+    "K" INTEGER NOT NULL,
+    "BB" INTEGER NOT NULL,
+    "SH" INTEGER NOT NULL,
+    "SF" INTEGER NOT NULL,
+    "SB" INTEGER NOT NULL
+);
+
+-- CreateIndex
+CREATE UNIQUE INDEX "Batters_id_key" ON "Batters"("id");
