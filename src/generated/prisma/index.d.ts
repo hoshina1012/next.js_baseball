@@ -883,6 +883,8 @@ export namespace Prisma {
 
   export type BattersAvgAggregateOutputType = {
     id: number | null
+    year: number | null
+    age: number | null
     AB: number | null
     H: number | null
     double: number | null
@@ -898,6 +900,8 @@ export namespace Prisma {
 
   export type BattersSumAggregateOutputType = {
     id: number | null
+    year: number | null
+    age: number | null
     AB: number | null
     H: number | null
     double: number | null
@@ -913,6 +917,9 @@ export namespace Prisma {
 
   export type BattersMinAggregateOutputType = {
     id: number | null
+    name: string | null
+    year: number | null
+    age: number | null
     AB: number | null
     H: number | null
     double: number | null
@@ -928,6 +935,9 @@ export namespace Prisma {
 
   export type BattersMaxAggregateOutputType = {
     id: number | null
+    name: string | null
+    year: number | null
+    age: number | null
     AB: number | null
     H: number | null
     double: number | null
@@ -943,6 +953,9 @@ export namespace Prisma {
 
   export type BattersCountAggregateOutputType = {
     id: number
+    name: number
+    year: number
+    age: number
     AB: number
     H: number
     double: number
@@ -960,6 +973,8 @@ export namespace Prisma {
 
   export type BattersAvgAggregateInputType = {
     id?: true
+    year?: true
+    age?: true
     AB?: true
     H?: true
     double?: true
@@ -975,6 +990,8 @@ export namespace Prisma {
 
   export type BattersSumAggregateInputType = {
     id?: true
+    year?: true
+    age?: true
     AB?: true
     H?: true
     double?: true
@@ -990,6 +1007,9 @@ export namespace Prisma {
 
   export type BattersMinAggregateInputType = {
     id?: true
+    name?: true
+    year?: true
+    age?: true
     AB?: true
     H?: true
     double?: true
@@ -1005,6 +1025,9 @@ export namespace Prisma {
 
   export type BattersMaxAggregateInputType = {
     id?: true
+    name?: true
+    year?: true
+    age?: true
     AB?: true
     H?: true
     double?: true
@@ -1020,6 +1043,9 @@ export namespace Prisma {
 
   export type BattersCountAggregateInputType = {
     id?: true
+    name?: true
+    year?: true
+    age?: true
     AB?: true
     H?: true
     double?: true
@@ -1122,6 +1148,9 @@ export namespace Prisma {
 
   export type BattersGroupByOutputType = {
     id: number
+    name: string
+    year: number
+    age: number
     AB: number
     H: number
     double: number
@@ -1156,6 +1185,9 @@ export namespace Prisma {
 
   export type BattersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    name?: boolean
+    year?: boolean
+    age?: boolean
     AB?: boolean
     H?: boolean
     double?: boolean
@@ -1171,6 +1203,9 @@ export namespace Prisma {
 
   export type BattersSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    name?: boolean
+    year?: boolean
+    age?: boolean
     AB?: boolean
     H?: boolean
     double?: boolean
@@ -1186,6 +1221,9 @@ export namespace Prisma {
 
   export type BattersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    name?: boolean
+    year?: boolean
+    age?: boolean
     AB?: boolean
     H?: boolean
     double?: boolean
@@ -1201,6 +1239,9 @@ export namespace Prisma {
 
   export type BattersSelectScalar = {
     id?: boolean
+    name?: boolean
+    year?: boolean
+    age?: boolean
     AB?: boolean
     H?: boolean
     double?: boolean
@@ -1214,13 +1255,16 @@ export namespace Prisma {
     SB?: boolean
   }
 
-  export type BattersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "AB" | "H" | "double" | "triple" | "HR" | "RBI" | "K" | "BB" | "SH" | "SF" | "SB", ExtArgs["result"]["batters"]>
+  export type BattersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "year" | "age" | "AB" | "H" | "double" | "triple" | "HR" | "RBI" | "K" | "BB" | "SH" | "SF" | "SB", ExtArgs["result"]["batters"]>
 
   export type $BattersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Batters"
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      name: string
+      year: number
+      age: number
       AB: number
       H: number
       double: number
@@ -1656,6 +1700,9 @@ export namespace Prisma {
    */
   interface BattersFieldRefs {
     readonly id: FieldRef<"Batters", 'Int'>
+    readonly name: FieldRef<"Batters", 'String'>
+    readonly year: FieldRef<"Batters", 'Int'>
+    readonly age: FieldRef<"Batters", 'Int'>
     readonly AB: FieldRef<"Batters", 'Int'>
     readonly H: FieldRef<"Batters", 'Int'>
     readonly double: FieldRef<"Batters", 'Int'>
@@ -2044,6 +2091,9 @@ export namespace Prisma {
 
   export const BattersScalarFieldEnum: {
     id: 'id',
+    name: 'name',
+    year: 'year',
+    age: 'age',
     AB: 'AB',
     H: 'H',
     double: 'double',
@@ -2081,6 +2131,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'String'
+   */
+  export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -2095,6 +2152,9 @@ export namespace Prisma {
     OR?: BattersWhereInput[]
     NOT?: BattersWhereInput | BattersWhereInput[]
     id?: IntFilter<"Batters"> | number
+    name?: StringFilter<"Batters"> | string
+    year?: IntFilter<"Batters"> | number
+    age?: IntFilter<"Batters"> | number
     AB?: IntFilter<"Batters"> | number
     H?: IntFilter<"Batters"> | number
     double?: IntFilter<"Batters"> | number
@@ -2110,6 +2170,9 @@ export namespace Prisma {
 
   export type BattersOrderByWithRelationInput = {
     id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2128,6 +2191,9 @@ export namespace Prisma {
     AND?: BattersWhereInput | BattersWhereInput[]
     OR?: BattersWhereInput[]
     NOT?: BattersWhereInput | BattersWhereInput[]
+    name?: StringFilter<"Batters"> | string
+    year?: IntFilter<"Batters"> | number
+    age?: IntFilter<"Batters"> | number
     AB?: IntFilter<"Batters"> | number
     H?: IntFilter<"Batters"> | number
     double?: IntFilter<"Batters"> | number
@@ -2143,6 +2209,9 @@ export namespace Prisma {
 
   export type BattersOrderByWithAggregationInput = {
     id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2166,6 +2235,9 @@ export namespace Prisma {
     OR?: BattersScalarWhereWithAggregatesInput[]
     NOT?: BattersScalarWhereWithAggregatesInput | BattersScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Batters"> | number
+    name?: StringWithAggregatesFilter<"Batters"> | string
+    year?: IntWithAggregatesFilter<"Batters"> | number
+    age?: IntWithAggregatesFilter<"Batters"> | number
     AB?: IntWithAggregatesFilter<"Batters"> | number
     H?: IntWithAggregatesFilter<"Batters"> | number
     double?: IntWithAggregatesFilter<"Batters"> | number
@@ -2181,6 +2253,9 @@ export namespace Prisma {
 
   export type BattersCreateInput = {
     id: number
+    name: string
+    year: number
+    age: number
     AB: number
     H: number
     double: number
@@ -2196,6 +2271,9 @@ export namespace Prisma {
 
   export type BattersUncheckedCreateInput = {
     id: number
+    name: string
+    year: number
+    age: number
     AB: number
     H: number
     double: number
@@ -2211,6 +2289,9 @@ export namespace Prisma {
 
   export type BattersUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    age?: IntFieldUpdateOperationsInput | number
     AB?: IntFieldUpdateOperationsInput | number
     H?: IntFieldUpdateOperationsInput | number
     double?: IntFieldUpdateOperationsInput | number
@@ -2226,6 +2307,9 @@ export namespace Prisma {
 
   export type BattersUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    age?: IntFieldUpdateOperationsInput | number
     AB?: IntFieldUpdateOperationsInput | number
     H?: IntFieldUpdateOperationsInput | number
     double?: IntFieldUpdateOperationsInput | number
@@ -2241,6 +2325,9 @@ export namespace Prisma {
 
   export type BattersCreateManyInput = {
     id: number
+    name: string
+    year: number
+    age: number
     AB: number
     H: number
     double: number
@@ -2256,6 +2343,9 @@ export namespace Prisma {
 
   export type BattersUpdateManyMutationInput = {
     id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    age?: IntFieldUpdateOperationsInput | number
     AB?: IntFieldUpdateOperationsInput | number
     H?: IntFieldUpdateOperationsInput | number
     double?: IntFieldUpdateOperationsInput | number
@@ -2271,6 +2361,9 @@ export namespace Prisma {
 
   export type BattersUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    year?: IntFieldUpdateOperationsInput | number
+    age?: IntFieldUpdateOperationsInput | number
     AB?: IntFieldUpdateOperationsInput | number
     H?: IntFieldUpdateOperationsInput | number
     double?: IntFieldUpdateOperationsInput | number
@@ -2295,8 +2388,25 @@ export namespace Prisma {
     not?: NestedIntFilter<$PrismaModel> | number
   }
 
+  export type StringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringFilter<$PrismaModel> | string
+  }
+
   export type BattersCountOrderByAggregateInput = {
     id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2312,6 +2422,8 @@ export namespace Prisma {
 
   export type BattersAvgOrderByAggregateInput = {
     id?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2327,6 +2439,9 @@ export namespace Prisma {
 
   export type BattersMaxOrderByAggregateInput = {
     id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2342,6 +2457,9 @@ export namespace Prisma {
 
   export type BattersMinOrderByAggregateInput = {
     id?: SortOrder
+    name?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2357,6 +2475,8 @@ export namespace Prisma {
 
   export type BattersSumOrderByAggregateInput = {
     id?: SortOrder
+    year?: SortOrder
+    age?: SortOrder
     AB?: SortOrder
     H?: SortOrder
     double?: SortOrder
@@ -2386,12 +2506,33 @@ export namespace Prisma {
     _max?: NestedIntFilter<$PrismaModel>
   }
 
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
   export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -2403,6 +2544,20 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringFilter<$PrismaModel> | string
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -2430,6 +2585,23 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
   }
 
 

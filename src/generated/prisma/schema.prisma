@@ -15,7 +15,10 @@ datasource db {
 }
 
 model Batters {
-  id     Int @id @unique
+  id     Int    @id @unique
+  name   String
+  year   Int
+  age    Int
   AB     Int
   H      Int
   double Int
