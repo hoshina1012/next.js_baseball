@@ -25,7 +25,7 @@ export default function addBatter(){
     const ops = obp + slg;
 
     const batterSubmit = async (e: React.FormEvent) => {
-        e.preventDefault;
+        e.preventDefault();
         setError("");
         setMessage("");
 
@@ -46,6 +46,7 @@ export default function addBatter(){
                     setError("登録できませんでした")
                     setMessage("")
                 }
+                return;
             }
 
             setMessage("登録に成功しました")

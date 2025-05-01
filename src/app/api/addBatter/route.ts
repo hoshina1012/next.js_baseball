@@ -7,29 +7,46 @@ export async function POST(req: Request){
             AB,H,double,triple,HR,RBI,
             K,BB,SH,SF,SB} = await req.json();
 
-        const check = await prisma.batters.FindFirst({
-            where :{name,year,age}
+        const check = await prisma.batters.findFirst({
+            where: {
+                name,
+                year: parseInt(year),
+                age: parseInt(age),
+            }
         })
 
         if(check){
             return NextResponse.json({message:"既に登録されています"},{status:400})
         }
 
-        const findUserId = await prisma.batters.FindFirst({
+        const findUserId = await prisma.batters.findFirst({
             orderBy :{id:"desc"}
         })
 
-        const newId = findUserId + 1;
+        const newId = (findUserId?.id ?? 0) + 1;
 
         const newBatter = await prisma.batters.create({
             data:{id:newId,
-                name,year,age,
-                AB,H,double,triple,HR,RBI,
-                K,BB,SH,SF,SB}
+                name,
+                year: parseInt(year),
+                age: parseInt(age),
+                AB: parseInt(AB),
+                H: parseInt(H),
+                double: parseInt(double),
+                triple: parseInt(triple),
+                HR: parseInt(HR),
+                RBI: parseInt(RBI),
+                K: parseInt(K),
+                BB: parseInt(BB),
+                SH: parseInt(SH),
+                SF: parseInt(SF),
+                SB: parseInt(SB)
+            }
         })
 
         return NextResponse.json({message:"登録成功"},{status:200})
     } catch(error){
+        console.log("error:" + error)
         return NextResponse.json({message:"サーバーエラー"},{status:500})
     }
 }
