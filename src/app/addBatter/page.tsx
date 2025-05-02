@@ -1,5 +1,5 @@
 "use client"
-import { NextResponse } from "next/server";
+import Link from "next/link";
 import {useState} from "react";
 
 export default function addBatter(){
@@ -245,6 +245,11 @@ export default function addBatter(){
                     登録
                 </button>
             </form>
+            <div className="mt-6 mx-auto text-center">
+                <Link href="/" className="text-blue-500 hover:underline">
+                    トップページ
+                </Link>
+            </div>
         </div>
     )
 }
